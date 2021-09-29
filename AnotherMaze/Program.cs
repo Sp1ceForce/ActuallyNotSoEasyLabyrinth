@@ -62,6 +62,7 @@ namespace ActuallyNotSoEasyLabyrinth
         {
             cells = ReadMazeFromFile();
 
+            Console.CursorVisible = false;
 
             DrawBottomLine();
 
@@ -153,7 +154,7 @@ namespace ActuallyNotSoEasyLabyrinth
                 DrawPlayer();
                 HandleMovement();
                 CheckCurrentCell();
-                Thread.Sleep(20);
+                
                 
             }
             Console.Clear();
@@ -335,7 +336,10 @@ namespace ActuallyNotSoEasyLabyrinth
                         Console.Write("▒");
                     }
                 }
+
+
             }
+            
 
         }
 
@@ -343,7 +347,7 @@ namespace ActuallyNotSoEasyLabyrinth
         {
             Console.SetCursorPosition(player.playerPosX, player.playerPosY);
             Console.Write("☺");
-            Console.SetCursorPosition(cells.GetLength(1) + 1, cells.GetLength(0) + 1);
+            Console.SetCursorPosition(player.playerPosX, player.playerPosY);
         } //Отрисовка игрока
 
         private static void SetNearCellsVisible()
